@@ -13,13 +13,13 @@ coins = [0, 1, 0, 1, 1, 0]
 3
 '''
 
-n = [1, 1, 0, 1, 1, 1]
+coins = [1, 1, 0, 1, 1, 1]
 i = 0
 count0 = 0
-while i < len(n):
-    if n[i] == 0: count0 += 1
+while i < len(coins):
+    if coins[i] == 0: count0 += 1
     i += 1
 
-if count0 == len(n) or count0 == 0: print(0)
-elif count0 < len(n) - count0: print(count0)
-else: print(len(n) - count0)
+if count0 == len(coins) or count0 == 0: print(0)
+elif count0 < len(coins) - count0: print(count0)
+else: print(len(coins) - count0)
