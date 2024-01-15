@@ -8,10 +8,10 @@
 
 def sum(a, b):
     if a > b:
-        temp = a
-        a = b
-        b = temp
-    
+        # temp = a
+        # a = b
+        # b = temp
+        a, b = b, a
     if a == 0:
         return b
     # print(a, b)
