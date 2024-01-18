@@ -37,42 +37,35 @@ Sample Output 2:
 1 2 7 8
 '''
 
-# def antivirus(str1, exmpl):
-#     index_01 = str1.find(exmpl[0])
-#     if index_01 < 0:
-#         # return 'Не заражено.'
-#         return False
-#     else:
-#         res = str1[index_01]
+def antivirus(str1, exmpl):
+    index_01 = str1.find(exmpl[0])
+    if index_01 < 0:
+        return False
+    else:
+        res = str1[index_01]
     
-#     for i in range(1, len(exmpl)):
-#         # print(exmpl[i])
-#         index_02 = str1[index_01 + 1:].find(exmpl[i]) + index_01 + 1
-#         # print(str1[index_0], index_0)
-#         if index_02 > index_01:
-#             res += str1[index_02]
-#             index_01 = index_02
-#     # print(res)
-#     # if res == exmpl:
-#     #     return 'Заражено!'
-#     # else:
-#     #     return 'Не заражено.'
-#     return res == exmpl
+    for i in range(1, len(exmpl)):
+        index_02 = str1[index_01 + 1:].find(exmpl[i]) + index_01 + 1
+        res += str1[index_02]
+        index_01 = index_02
+    return res == exmpl
 
-# example = 'anton'
-# # data = 'unton'
 
-# str_arr = [
-#     '222anton456',
-#     'a1n1t1o1n1',
-#     '0000a0000n00t000a00o000t000n',
-#     'gylfole',
-#     'richard',
-#     'ant0n'
-# ]
-# for i in range(len(str_arr)):
-#     if antivirus(str_arr[i], example):
-#         print(i + 1, end=' ')
+example = 'anton'
+str_arr = [
+    'osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen',
+    'anton',
+    'aoooooooooontooooo',
+    'elelelelelelelelelel',
+    'ntoneeee',
+    'tonee',
+    '2532a35235a5323352n25235352t253523523235oo235523523523n',
+    'antooooooooooaoooooooooooooooooooooooooooooooooooooooooon'
+    'unton'
+]
+for i in range(len(str_arr)):
+    if antivirus(str_arr[i], example):
+        print(i + 1, end=' ')
 
 '''
 . Напишите функцию, которая принимает одно число и проверяет, является ли оно простым
@@ -123,7 +116,7 @@ Sample Output 2:
 10 минут
 '''
 
-# n = 3000
+# n = 1500
 # dict01 = {}
 # for i in range(n):
 #     sum = 0
@@ -211,16 +204,16 @@ Sample Output 2:
 Вывод: 2
 '''
 
-n01 = int(input('введите количество элементов массива: '))
-arr01 =[]
-for i in range(n01):
-    arr01.append(int(input('введите целое число: ')))
+# n01 = int(input('введите количество элементов массива: '))
+# arr01 =[]
+# for i in range(n01):
+#     arr01.append(int(input('введите целое число: ')))
 
-count01 = 0
-temp = []
-for i in arr01:
-    if arr01.count(i) >= 2 and i not in temp:
-        count01 += 1
-        temp.append(i)
-print(arr01)
-print(count01)
+# count01 = 0
+# temp = []
+# for i in arr01:
+#     if arr01.count(i) >= 2 and i not in temp:
+#         count01 += 1
+#         temp.append(i)
+# print(arr01)
+# print(count01)

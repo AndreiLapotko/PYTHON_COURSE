@@ -195,35 +195,40 @@
 # print(array_diff([1, 2, 2, 2, 2, 3], [2, 1]))
 
 """*********************************************************************"""
-# def f(x):
-#     return x*x
 
-# a = f
-# print(f(4))
-# print(a(5))
+
+def f(x):
+    return x * x
+
+
+a = f
+print(f(4))
+print(a(5))
+
 
 # def summ(a, b):
 #     return a + b
 
-# summ = lambda a,b: a + b
+
+summ = lambda a, b: a + b
 
 
-# def mult(a, b):
-#     return a * b
+def mult(a, b):
+    return a * b
 
 
-# def math(op, x, y):
-#     print(op(x, y))
+def math(op, x, y):
+    print(op(x, y))
 
 
-# # math(summ, 4, 2)
-# math(mult, 4, 5)
-# math(lambda a, b: a + b, 11, 4)
-# # print(summ(2, 3))
+math(summ, 4, 2)
+math(mult, 4, 5)
+math(lambda a, b: a + b, 11, 4)
+# print(summ(2, 3))
 
 """*********************************************************************"""
 # задача №1
-list01 = [1, 2, 3, 5, 8, 15, 23, 38]
+# list01 = [1, 2, 3, 5, 8, 15, 23, 38]
 # # вариант 1
 # list02 = [i for i in list01 if i % 2 == 0]
 # list03 = [i * i for i in list02]
