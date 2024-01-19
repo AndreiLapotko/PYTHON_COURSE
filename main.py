@@ -15,7 +15,7 @@
 #     return res
 # print(sum_str('a', 's', 'd', ' ', 'f'))
 # print(sum_str(1, 2, 3, 4))
-
+"""*********************************************************************"""
 # import modul01
 # print(modul01.max1(10, 15))
 
@@ -27,8 +27,8 @@
 
 # import modul01 as m01
 # print(m01.max1(10, 5))
-
 """*********************************************************************"""
+
 # def fib(n): # функция возвращает число Фибоначчи
 #     if n in [1, 2]:
 #         return 1
@@ -197,34 +197,34 @@
 """*********************************************************************"""
 
 
-def f(x):
-    return x * x
+# def f(x):
+#     return x * x
 
 
-a = f
-print(f(4))
-print(a(5))
+# a = f
+# print(f(4))
+# print(a(5))
 
 
-# def summ(a, b):
-#     return a + b
+# # def summ(a, b):
+# #     return a + b
 
 
-summ = lambda a, b: a + b
+# summ = lambda a, b: a + b
 
 
-def mult(a, b):
-    return a * b
+# def mult(a, b):
+#     return a * b
 
 
-def math(op, x, y):
-    print(op(x, y))
+# def math(op, x, y):
+#     print(op(x, y))
 
 
-math(summ, 4, 2)
-math(mult, 4, 5)
-math(lambda a, b: a + b, 11, 4)
-# print(summ(2, 3))
+# math(summ, 4, 2)
+# math(mult, 4, 5)
+# math(lambda a, b: a + b, 11, 4)
+# # print(summ(2, 3))
 
 """*********************************************************************"""
 # задача №1

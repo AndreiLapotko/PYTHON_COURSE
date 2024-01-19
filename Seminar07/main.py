@@ -94,18 +94,17 @@ else:
 '''
 
 # values = [0, 2, 10, 6]
-# values = [0, 2, 9, 6]
-values = []
+values = [0, 2, 9, 6]
+# values = []
 
 def same_by(foo, arr):
-    if len(arr) == 0:
-        return True
-    # res = list(filter(foo(x), arr))
-    res = []
-    for i in arr:
-        if foo(i) == 0:
-            res.append(i)
-    return len(res) == len(arr)
+    # res = []
+    # for i in arr:
+    #     if foo(i) == 0:
+    #         res.append(i)
+    # return len(res) == len(arr)
+    res = list(filter(foo, arr))
+    return len(res) == 0 or len(arr) == 0
 
 
 if same_by(lambda x: x % 2, values):

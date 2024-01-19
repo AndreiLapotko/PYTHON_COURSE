@@ -24,7 +24,7 @@ stroka = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
 
 OK = 'Парам пам-пам'
 not_OK = 'Пам парам'
-ahtung = 'Количество фраз должно быть больше одной!'
+achtung = 'Количество фраз должно быть больше одной!'
 
 def counting_vowels(str):
     vowels = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е']
@@ -35,10 +35,9 @@ def counting_vowels(str):
     return count1
 
 if stroka.find(' ') < 0 or stroka.find(' ') == len(stroka) - 1:
-    print(ahtung)
+    print(achtung)
 else:
-    text1 = stroka.split()
-    list_of_vowels = list(map(lambda x: counting_vowels(x), text1))
+    list_of_vowels = list(map(lambda x: counting_vowels(x), stroka.split()))
     if max(list_of_vowels) == min(list_of_vowels):
         print(OK)
     else:
