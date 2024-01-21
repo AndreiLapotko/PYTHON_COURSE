@@ -1,4 +1,7 @@
 
+from unittest import result
+
+
 def work_with_phonebook():
     choice = show_menu()
 
@@ -10,11 +13,11 @@ def work_with_phonebook():
             print_result(phone_book)
 
         elif choice == 2:
-            last_name = input('lastname ')
+            last_name = input('Фамилия: ')
             print(find_by_lastname(phone_book, last_name))
 
         elif choice == 3:
-            number = input('number ')
+            number = input('Телефон: ')
             print(find_by_number(phone_book, number))
 
         elif choice == 4:
@@ -69,16 +72,60 @@ def write_txt(filename, phone_book):
             s = ''
             for v in phone_book[i].values():
                 s += v + ','
-            phout.write(f'{s[:-1]}\n')
+            # phout.write(f'{s[:-1]}\n')
+            phout.write(f'{s[:-1]}')
 
-
+# 1
 def print_result(phb):
     for i in range(len(phb)):
-            s = ''
-            for v in phb[i].values():
-                s += v + ",\t"
-            print(f'{s[:-2]}')
+            # s = ''
+            s = []
+            for x, y in phb[i].items():
+                # s += v + "," + "\t"
+                s.append(y)
+                # print(y, end=' ')
+            # print(f'{s[:-2]}')
+            print(s)
 
+# 2
+def find_by_lastname(phone_book, last_name):
+    result = {}
+    for i in phone_book:
+        if i.get('Фамилия') == last_name:
+            result.update(i)
+    return result
+
+# 3
+def find_by_number(phone_book, number):
+    result = {}
+    for i in phone_book:
+        if i.get('Телефон') == number:
+            result.update(i)
+    return result
+
+# 4
+def add_user(phone_book, user_data):
+    fields1 = ['Фамилия', 'Имя', 'Телефон', 'Описание']
+    data = user_data.split()
+    fields2 = len(data)
+    result = {}
+    for i in range(fields2):
+        result[fields1[i]] = data[i]
+    print(result)
+    phone_book.append(result)
+
+# 5
+def change_number(phone_book, last_name, new_number):
+    ind = phone_book.index(find_by_lastname(phone_book, last_name))
+    phone_book[ind]['Телефон'] = new_number
+    return(phone_book[ind])
+
+
+# 6
+def delete_by_lastname(phone_book, last_name):
+    ind = phone_book.index(find_by_lastname(phone_book, last_name))
+    
+    return(phone_book.pop(ind))
 
 
 work_with_phonebook()
