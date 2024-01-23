@@ -284,11 +284,11 @@
 # data.writelines(colors)
 # data.close
 
-# with open('file.txt', 'w') as data:
-#     data.write('line 1\n')
-#     data.write('line 3\n')
+with open('file.txt', 'a') as data:
+    data.writelines('line 01\n')
+    data.write('line 03\n')
 
-# print(57)
+print(57)
 
 # path = 'file.txt'
 # data = open(path, 'r')
