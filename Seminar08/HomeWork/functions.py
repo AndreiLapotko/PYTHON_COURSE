@@ -4,8 +4,10 @@ def read_txt(filename):
 
     with open(filename, "r", encoding="utf-8") as phb:
         for line in phb:
-            record = dict(zip(fields, line.split(",")))
-            phone_book.append(record)
+            if len(line) > 5:
+                record = dict(zip(fields, line.split(",")))
+                phone_book.append(record)
+    # print(phone_book)
     return phone_book
 
 
@@ -39,22 +41,18 @@ def find_by_lastname(phone_book, last_name):
 
 # 3
 def find_by_number(phone_book, number):
-    result = {}
-    # list1 = []
+    # result = {}
+    list1 = []
     for i in phone_book:
         if i.get("Телефон") == number:
-            result = i
+            # result = i
+            list1.append(i)
             break
-        # temp = i.get('Телефон', 'Такого номера нет в справочнике!')
-        # if temp == number:
-        #     result.update(i)
-        #     # list1.append(i)
-        else:
-            result = {
-                "Такого номера нет в справочнике!": "Такого номера нет в справочнике!"
-            }
-    # return list1
-    return list(result.values())
+    if len(list1) == 0:
+        list1 = [
+            {"Такого номера нет в справочнике!": "The requested number is missing!"}
+        ]
+    return list1
 
 
 # 4
@@ -85,6 +83,7 @@ def change_number(phone_book, last_name, new_number):
 # 6
 def delete_by_number(phone_book, number):
     ind = phone_book.index(find_by_number(phone_book, number))
+    print(ind)
     return phone_book.pop(ind)
 
 
@@ -93,12 +92,13 @@ def write_txt(filename, phone_book):
     # print(phone_book)
     with open(filename, "w", encoding="utf-8") as phout:
         for i in range(len(phone_book)):
-            temp = phone_book[i].values()
-            print(temp)
+            # temp = phone_book[i].values()
+            # print(temp)
             s = ""
             for v in phone_book[i].values():
                 s += v + ","
-            phout.write(
-                f"{s[:-1]}" + "\n"
-            )  # выдаёт паразитные строки при перезаписи!!!!!!
+            if len(s) > 5:
+                phout.write(
+                    f"{s[:-1]}" + "\n"
+                )  # выдаёт паразитные строки при перезаписи!!!!!!
             # phout.write(f'{s[:-1]}')

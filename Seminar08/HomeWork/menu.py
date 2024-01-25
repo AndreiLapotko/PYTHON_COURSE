@@ -27,6 +27,7 @@ def work_with_phonebook():
             number = input("Телефон: ")
             # print(find_by_number(phone_book, number))
             print(*find_by_number(phone_book, number), sep="\t")
+            # print_result(*find_by_number(phone_book, number))
 
         elif choice == 4:
             user_data = input("new data ")
